@@ -12,8 +12,10 @@ use App\Models\ProductModel;
 
 $data = [
     'name' => "Iphone 19",
-    'price' => 3000,
-    'detail' => "2 quả thận"
+    'price' => 2000,
+    'detail' => "1 quả thận",
+    'image' => 'iphone19.jpg'
 ];
 $product = new ProductModel();
-var_dump($product->insert($data));
+// var_dump($product->insert($data));
+var_dump($product->update(7777, $data));

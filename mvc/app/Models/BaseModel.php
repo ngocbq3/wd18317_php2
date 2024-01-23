@@ -137,6 +137,6 @@ class BaseModel
         $stmt = $this->conn->prepare($this->sqlBuilder);
         //Đưa id vào trong mảng data
         $data['id'] = $id;
-        $stmt->execute($data);
+        return $stmt->execute($data);
     }
 }
