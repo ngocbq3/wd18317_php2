@@ -133,5 +133,10 @@ class BaseModel
         $this->sqlBuilder = rtrim($this->sqlBuilder, ", ");
         //Nối câu lệnh điều kiện
         $this->sqlBuilder .= " WHERE id=:id";
+
+        $stmt = $this->conn->prepare($this->sqlBuilder);
+        //Đưa id vào trong mảng data
+        $data['id'] = $id;
+        $stmt->execute($data);
     }
 }
