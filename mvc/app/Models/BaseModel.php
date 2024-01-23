@@ -116,4 +116,22 @@ class BaseModel
         //Trả lại cái giá trị của id mới thêm vào
         return $this->conn->lastInsertId();
     }
+
+    /**
+     * Method update: dùng để cập nhật dữ liệu
+     * @$id: giá trị của khóa chính
+     * @$data: mảng dữ liệu cần cập nhật, phải được thiết kế có key và value
+     * key phải là tên cột
+     */
+    public function update($id, $data)
+    {
+        $this->sqlBuilder = "UPDATE $this->tableName SET ";
+        foreach ($data as $column => $value) {
+            $this->sqlBuilder .= "`{$column}`=:$column, ";
+        }
+        //Xóa, loại bỏ dấu ", "
+        $this->sqlBuilder = rtrim($this->sqlBuilder, ", ");
+        //Nối câu lệnh điều kiện
+        $this->sqlBuilder .= " WHERE id=:id";
+    }
 }
