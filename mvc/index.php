@@ -19,5 +19,6 @@ Router::get("/product/list", function () {
     echo "Page PRODUCT LIST";
 });
 Router::get("/home", [HomeController::class, 'index']);
+Router::get("/detail", [HomeController::class, 'detail']);
 
 $router->resolve();
