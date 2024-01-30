@@ -1,6 +1,7 @@
 <?php
 
 use App\Controllers\HomeController;
+use App\Controllers\ProductController;
 use App\Router;
 
 require_once "./env.php";
@@ -20,5 +21,6 @@ Router::get("/product/list", function () {
 });
 Router::get("/home", [HomeController::class, 'index']);
 Router::get("/detail", [HomeController::class, 'detail']);
+Router::get("/product/list", [ProductController::class, 'index']);
 
 $router->resolve();
