@@ -22,5 +22,8 @@ Router::get("/product/list", function () {
 Router::get("/home", [HomeController::class, 'index']);
 Router::get("/detail", [HomeController::class, 'detail']);
 Router::get("/product/list", [ProductController::class, 'index']);
+Router::get("/product/list", [ProductController::class, 'index']);
+Router::get("/product/create", [ProductController::class, 'create']);
+Router::post("/product/create", [ProductController::class, 'store']);
 
 $router->resolve();
