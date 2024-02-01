@@ -1,3 +1,6 @@
+<div class="message">
+    <?= $message ?>
+</div>
 <table border="1">
     <tr>
         <th>#ID</th>
@@ -17,8 +20,8 @@
             </td>
             <td><?= $pro->price ?></td>
             <td>
-                <a href="<?= ROOT_PATH ?>product/edit?id<?= $pro->id ?>">Edit</a>
-                <a href="<?= ROOT_PATH ?>product/delete?id<?= $pro->id ?>">Delete</a>
+                <a href="<?= ROOT_PATH ?>product/edit?id=<?= $pro->id ?>">Edit</a>
+                <a href="<?= ROOT_PATH ?>product/delete?id=<?= $pro->id ?>">Delete</a>
             </td>
         </tr>
     <?php endforeach ?>

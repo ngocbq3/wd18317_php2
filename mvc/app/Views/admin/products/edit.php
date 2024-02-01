@@ -1,4 +1,4 @@
-<form action="<?= ROOT_PATH ?>product/create" method="post" enctype="multipart/form-data">
+<form action="" method="post" enctype="multipart/form-data">
     Tên sản phẩm
     <input type="text" name="name" value="<?= $product->name ?>">
     <br>
@@ -21,5 +21,5 @@
     <textarea name="detail" id="" cols="100" rows="10"><?= $product->detail ?></textarea>
     <input type="hidden" name="id" value="<?= $product->id ?>">
     <br>
-    <button type="submit">Thêm</button>
+    <button type="submit">Cập nhật</button>
 </form>

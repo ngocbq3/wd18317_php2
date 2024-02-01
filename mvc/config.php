@@ -9,3 +9,9 @@ function dd($data)
     var_dump($data);
     echo "</pre>";
 }
+
+function redirect($route)
+{
+    header("location: " . ROOT_PATH . $route);
+    die;
+}
