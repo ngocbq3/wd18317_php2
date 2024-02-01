@@ -26,7 +26,7 @@ class ProductController extends BaseController
             ['categories' => $categories]
         );
     }
-    //Lưu lên database từ form add
+    //Thêm mới lên database từ form add
     public function store()
     {
         $data = $_POST;
@@ -42,5 +42,16 @@ class ProductController extends BaseController
         $product->insert($data);
         header("location: " . ROOT_PATH . "product/list");
         die;
+    }
+    //Hiển thị Form sửa sản phẩm
+    public function edit()
+    {
+        $id = $_GET['id'];
+        $product = ProductModel::find($id);
+        $categories = CategoryModel::all();
+        return $this->view(
+            "admin/products/edit",
+            ['product' => $product, 'categories' => $categories]
+        );
     }
 }
